@@ -19,8 +19,8 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           scope: "@fahmi-armand"
       - name: Install dependencies
-        run: npm
+        run: npm ci
       - name: Publish package
-        run: npm publish --non-interactive --access public
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
