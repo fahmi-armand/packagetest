@@ -1,6 +1,6 @@
 {
   "name": "@fahmi-armand/packagetest",
-  "version": "0.0.1",
+  "version": "0.0.1.1",
   "description": "Testing publish package for npm via github",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
