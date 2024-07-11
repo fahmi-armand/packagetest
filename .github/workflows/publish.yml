@@ -13,16 +13,14 @@ jobs:
       - name: Create .npmrc
         run: |
           echo "@fahmi-armand:registry=https://npm.pkg.github.com" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
       - uses: actions/setup-node@v4
         with:
           node-version: "20.x"
           registry-url: "https://npm.pkg.github.com"
           scope: "@fahmi-armand"
-          always-auth: true
       - name: Install dependencies
-        run: yarn
+        run: npm
       - name: Publish package
-        run: yarn publish --non-interactive --access public
+        run: npm publish --non-interactive --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
